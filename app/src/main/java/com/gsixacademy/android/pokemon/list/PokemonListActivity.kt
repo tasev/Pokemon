@@ -7,7 +7,7 @@ import android.widget.Toast
 import com.gsixacademy.android.pokemon.R
 import com.gsixacademy.android.pokemon.api.PokemonApi
 import com.gsixacademy.android.pokemon.api.ServiceBuilder
-import com.gsixacademy.android.pokemon.details.PokemonDetailsActivity
+import com.gsixacademy.android.pokemon.details.PokemonDetailsViewPagerActivity
 import com.gsixacademy.android.pokemon.models.PokemonListResponse
 import kotlinx.android.synthetic.main.activity_pokemon_list.*
 import retrofit2.Call
@@ -42,7 +42,7 @@ class PokemonListActivity : AppCompatActivity() {
                         //initiate adapter
                         var pokemonListAdapter = PokemonListAdapter(pokemons){
                             if(it is PokemonListAdapterClickEvent.PokemonListAdapterItemClicked){
-                            startActivity(Intent(applicationContext,PokemonDetailsActivity::class.java).putExtra("pokemonName",it.pokemonResult.name).putExtra("pokemonUrl",it.pokemonResult.url))
+                            startActivity(Intent(applicationContext,PokemonDetailsViewPagerActivity::class.java).putExtra("pokemonName",it.pokemonResult.name).putExtra("pokemonUrl",it.pokemonResult.url))
                             }
                         }
                         recycler_view_pokemons.adapter = pokemonListAdapter

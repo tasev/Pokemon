@@ -5,5 +5,6 @@ class PokemonDetails(
     val height: Double?,
     val weight: Double?,
     val types: ArrayList<TypeResult>?,
-    val stats: ArrayList<StatResult>?
+    val stats: ArrayList<StatResult>?,
+    val moves: ArrayList<MoveResult>
 )
